@@ -1178,3 +1178,10 @@ textarea {
   .gamecard:nth-child(1) { --x: -70px; }
   .gamecard:nth-child(3) { --x: 70px; }
 }
+
+.gamecard {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 250 / 400; /* Forces the browser to reserve this space before loading */
+  backface-visibility: hidden; /* Prevents jitter during animation */
+}
