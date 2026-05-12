@@ -216,15 +216,19 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
 
   setInterval(updateCountdown, 1000);
+
+  
 });
 
 /* ====================================================================
                         GLOBAL EVENT LISTENERS
 ==================================================================== */
-window.addEventListener("scroll", () => {
-  updateParallax();
-  updateForegroundDepth();
+window.addEventListener("load", () => {
+  // All images are loaded, coordinates are now permanent
+  initRevealAnimations();
+  initCardFanAnimation();
   updateActiveNav();
+  updateParallax();
 });
 
 window.addEventListener("load", () => {
