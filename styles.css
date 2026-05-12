@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+
+.bKy5e {
+  display:none;
+}
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
