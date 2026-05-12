@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clashborn Games</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon_Clashborn-Games.ico">
+  <meta name="description" content="Clashborn Games - A New Force in Board Game Publishing"/>
+  <!-- <link rel="stylesheet" href="styles.css"/> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+
+/* ====================================================================
+                                DEFAULT
+==================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: #0a0d14;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: clip;
+}
+
+.section-tag {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 800;
+  color: #ffc400;
+}
+
+h1 {
+  font-family: "Russo One", sans-serif;
+  font-size: clamp(3.4rem, 7vw, 8rem);
+  line-height: 1;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-family: "Russo One", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h2 span {
+  color: #ffc400; 
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+}
+
+h3 span {
+  font-weight: 400;
+}
+
+.lead {
+  font-size: 1.08rem;
+  color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-actions {
+  font-size: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.content-section {
+  padding: 80px 0;
+  background:
+    radial-gradient(circle at top center, rgba(122, 92, 255, 0.08), transparent 28%),
+    #0a0d14;
+}
+
+.dark-section {
+  background:
+    radial-gradient(circle at top center, rgba(213, 168, 94, 0.08), transparent 25%),
+    #111725;
+}
+
+.grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+  align-items: start;
+}
+
+.banner {
+  min-height: 52vh;
+  display: grid;
+  place-items: center;
+}
+
+.banner.tall {
+  min-height: 65vh;
+}
+
+.banner-content {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.banner-content.narrow {
+  max-width: 860px;
+}
+
+.cards {
+  display: grid;
+  gap:  2rem;
+}
+
+.info-card{
+  background: rgba(19, 25, 39, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+  padding: 1.3rem;
+}
+
+.info-card p {
+  color: #ffffff;
+}
+
+
+/* ====================================================================
+                               BUTTONS
+===================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 1rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary,
+.contact-btn {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #ff9100ef, #f0c37f);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: #111;
+  box-shadow: 0 8px 20px rgba(255, 145, 0, 0.25);
+  transition:
+    background-position 0.5s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-btn {
+ font-size: 1rem;
+}
+
+.btn-primary:hover,
+.contact-btn:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 14px 35px rgba(255, 145, 0, 0.4);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f5f7fb;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 196, 0, 0.12);
+  border-color: rgba(255, 196, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(255, 196, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,0.25),
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn:hover::after {
+  transform: translateX(100%);
+}
+
+
+/* ====================================================================
+                         FOREGROUND IMAGES
+===================================================================== */
+.scroll-foreground {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  --scrollY: 0px;
+  --revealX: 0px;
+  --offsetX: 0px;
+  top: 50%;
+  bottom: auto;
+  transform:
+    translateX(calc(var(--offsetX) + var(--revealX)))
+    translateY(calc(var(--baseY, -50%) + var(--scrollY)));
+  will-change: transform;
+}
+
+.scroll-foreground .float-inner {
+  height: clamp(300px, 45vw, 700px);
+  width: auto;
+  object-fit: cover;
+  display: block;
+  animation: floatLayer 6s ease-in-out infinite;
+}
+
+.foreground-img-1 {
+  left: 0;
+  --offsetX: clamp(10px, -4vw, -20px);
+  --baseY: -50%;
+}
+
+.foreground-img-2 {
+  right: 0;
+  --offsetX: clamp(-100px, 5vw, -100px);
+  --baseY: -65%;
+}
+
+.foreground-img-3 {
+  left: 0;
+  --offsetX: clamp(100px, -4vw, -20px);
+  --baseY: -65%;
+}
+
+.mobile-foreground {
+  display: none;
+  margin: 2.5rem auto;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  left: 0;
+  transform: none;
+}
+
+.mobile-foreground img {
+  display: block;
+  margin: 0 auto;
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  animation: floatLayer 6s ease-in-out infinite;
+}
+
+.section-stage {
+  position: relative;
+}
+
+/* Image Reveal */
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transform: translateX(var(--revealX));
+  transition:
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s ease;
+}
+
+.reveal-left {
+  --revealX: -120vw;
+}
+
+.reveal-right {
+  --revealX: 120vw;
+}
+
+.reveal-left.show,
+.reveal-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes floatLayer {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Image Frame */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.image-frame {
+  position: relative;
+  display: inline-block;
+  border-radius: 12px;
+  padding: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.image-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  --angle: 0deg;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    #ff9100,
+    #fff,
+    #ffc400,
+    transparent 120deg
+  );
+  animation: spin 6s linear infinite;
+  filter: blur(6px);
+
+  padding: 2px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.image-frame img {
+  display: block;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  to { --angle: 360deg; }
+}
+
+/* ====================================================================
+                         HEADER + MENU SECTION
+===================================================================== */
+.container {
+  width: min(calc(100% - 2rem), 1180px);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  height: 76px;
+  background: rgba(8, 11, 18, 0.65);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.hero-logo {
+  width: 80px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  position: relative;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: none;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.site-nav a {
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #ffc400;
+}
+
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 5px auto;
+  background: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* ====================================================================
+                              HOME SECTION
+===================================================================== */
+.hero,
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  will-change: background-position;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(7, 10, 16, 0.15), rgba(7, 10, 16, 0.80)),
+    radial-gradient(circle at top, rgba(122, 92, 255, 0.25), transparent 35%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.overlay-soft {
+  background:
+    linear-gradient(to bottom, rgba(7, 10, 16, 0.45), rgba(7, 10, 16, 0.78)),
+    radial-gradient(circle at center, rgba(213, 168, 94, 0.18), transparent 40%);
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 76px);
+}
+
+.hero-media {
+  display: flex;
+  justify-content: center;
+  --revealX: -120vw;
+}
+
+.hero-img {
+  width: clamp(300px, 50vw, 600px);
+  max-width: none;
+  height: auto;
+  animation: floatLayer 6s ease-in-out infinite;
+}
+
+.hero-text {
+  max-width: 800px;
+  text-align: center;
+}
+
+
+/* ====================================================================
+                          WHO WE ARE SECTION
+===================================================================== */
+.who-we-are-columns {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.who-we-are-columns p {
+  margin: 0;
+}
+
+
+/* ====================================================================
+                              NEWS SECTION
+===================================================================== */
+.news {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.news-stage .banner {
+  display: block;
+}
+
+.news-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-text {
+  max-width: none;
+  width: 100%;
+  text-align: center;
+}
+
+.news-media {
+  display: flex;
+  justify-content: center;
+}
+
+.news-img {
+  width: clamp(300px, 35vw, 460px);
+  max-width: none;
+  height: auto;
+  animation: floatLayer 6s ease-in-out infinite;
+}
+
+/* ====================================================================
+                          BOARD GAMES SECTION
+===================================================================== */
+.boardgames {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.boardgames-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.boardgames-text {
+  max-width: 100%;
+  text-align: center;
+}
+
+.boardgames-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.boardgames-columns p {
+  margin: 0;
+}
+
+:root {
+  --fan-scale: clamp(0.6, 0.8vw, 1);
+}
+
+.boardgames-gamecard-container {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  margin: 30px auto 160px auto;
+  overflow: visible;
+
+  transform: scale(var(--fan-scale));
+  transform-origin: top center;
+}
+
+.gamecard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+}
+
+.gamecard-overlay {
+  position: absolute;
+  bottom: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  max-width: none;
+  z-index: 10;
+}
+
+.gamecard:nth-child(1) { animation-delay: 0s; z-index: 3; }
+.gamecard:nth-child(2) { animation-delay: 0.2s; z-index: 2; }
+.gamecard:nth-child(3) { animation-delay: 0.4s; z-index: 1; }
+
+.gamecard:nth-child(1) {
+  --x: -180px;
+  --y: 40px;
+  --rot: -15deg;
+  --scale: 1.02;
+}
+
+.gamecard:nth-child(2) {
+  --x: 0px;
+  --y: 0px;
+  --rot: 0deg;
+  --scale: 1;
+}
+
+.gamecard:nth-child(3) {
+  --x: 170px;
+  --y: 30px;
+  --rot: 15deg;
+  --scale: 0.98;
+}
+
+@keyframes fanOut {
+  to {
+    transform: translate(
+      calc(-50% + var(--x)),
+      calc(-50% + var(--y))
+    ) rotate(var(--rot)) scale(var(--scale));
+  }
+}
+
+.gamecard.animate {
+  animation: fanOut 0.6s ease forwards;
+}
+
+.gamecard.animate:nth-child(1) { animation-delay: 0s; }
+.gamecard.animate:nth-child(2) { animation-delay: 0.2s; }
+.gamecard.animate:nth-child(3) { animation-delay: 0.4s;}
+
+
+/* ====================================================================
+                            MISSION SECTION
+===================================================================== */
+.mission {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.mission-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-media {
+  display: flex;
+  justify-content: center;
+  --revealX: -120vw;
+}
+
+.mission-img {
+  width: clamp(300px, 40vw, 520px);
+  max-width: none;
+  height: auto;
+  animation: floatLayer 6s ease-in-out infinite;
+}
+
+.mission-text {
+  max-width: 800px;
+  text-align: center;
+}
+
+/* ====================================================================
+                          COUNTDOWN TIMER
+==================================================================== */
+.countdown {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.time-box {
+  background: rgba(255,255,255,0.10);
+  padding: 20px;
+  border-radius: 15px;
+  width: 100px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.time-box span {
+  font-size: 2.5rem;
+  display: block;
+  position: relative;
+  will-change: transform, opacity;
+}
+
+.flip {
+  animation: arcaneBurst 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #ffd36b;
+}
+
+@keyframes arcaneBurst {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+    text-shadow: 0 0 0 rgba(255, 211, 107, 0);
+  }
+
+  40% {
+    transform: scale(1.15);
+    opacity: 1;
+    text-shadow:
+      0 0 10px rgba(255, 211, 107, 0.9),
+      0 0 20px rgba(255, 170, 50, 0.7);
+  }
+
+  70% {
+    transform: scale(0.97);
+  }
+
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 211, 107, 0);
+  }
+}
+
+.time-box p {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+
+/* ====================================================================
+                          SOCIAL MEDIA
+==================================================================== */
+.social-float {
+  position: fixed;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.8rem 0.6rem;
+  background: rgba(24, 20, 10, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.social-link {
+  position: relative;
+  overflow: hidden;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9100ef, #f0c37f);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: #111;
+  box-shadow: 0 8px 20px rgba(255, 145, 0, 0.25);
+  transition:
+    background-position 0.5s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.social-link:hover {
+  border-color: rgb(168, 109, 0, 1);
+  background-position: 100% 50%;
+  box-shadow: 0 14px 35px rgba(255, 145, 0, 0.4);
+}
+
+.social-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,0.25),
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.social-link:hover::after {
+  transform: translateX(100%);
+}
+
+.social-link svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+}
+
+.footer-socials-mobile {
+  display: none;
+}
+
+.fa-brands, .fab {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+
+/* ====================================================================
+                          CONTACT SECTION
+==================================================================== */
+.contact-email {
+  color: #ffc400;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-email:hover {
+  color: #ffd36b;
+  text-decoration: underline;
+}
+
+.contact-form {
+  background: rgba(19, 25, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form label {
+  color: #c6cede;
+}
+
+.contact-grid {
+  align-items: center;
+}
+
+.contact-form {
+  padding: 1.4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row {
+  width: 100%;
+}
+
+.form-description {
+    color: #c6cede;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+textarea {
+    height: 140px;
+    resize: none;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 14, 24, 0.9);
+  color: #f5f7fb;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  outline: none;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(213, 168, 94, 0.6);
+  box-shadow: 0 0 0 3px rgba(213, 168, 94, 0.12);
+}
+
+.form-label-field {
+  width: 100%;
+}
+
+.field-error {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #ff8080;
+  min-height: 1em;
+}
+
+.form-status {
+  font-size: 0.95rem;
+  min-height: 1.2em;
+}
+
+.form-status.success {
+  color: #9be7b1;
+}
+
+.form-status.error {
+  color: #ff8080;
+}
+
+.contact-form input.is-invalid,
+.contact-form textarea.is-invalid {
+  border-color: #ff8080;
+  box-shadow: 0 0 0 3px rgba(255, 128, 128, 0.12);
+}
+
+.contact-form input.is-valid,
+.contact-form textarea.is-valid {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.input--hidden {
+  display: none;
+}
+
+/* ======================= BREVO ========================= */
+.sib-form h3 {
+  font-size: 1.6rem;
+}
+
+.sib-form-block {
+  margin-bottom: 24px;
+}
+
+.form__entry {
+  margin-bottom: 0;
+}
+
+.entry__specification,
+.entry__error {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.entry__specification:empty,
+.entry__error:empty {
+  display: none;
+}
+
+.form__label-row {
+  margin-bottom: 0;
+}
+
+.contact-form {
+  gap: 0.6rem;
+}
+
+.contact-btn {
+  margin-top: 20px;
+}
+
+.contact-form-box {
+  position: relative;
+  overflow: visible;
+}
+
+.grecaptcha-badge {
+  position: absolute !important;
+  bottom: 18px !important;
+  right: 18px !important;
+
+  width: 70px !important;
+  overflow: hidden !important;
+
+  transition: width 0.3s ease !important;
+  z-index: 20;
+}
+
+.grecaptcha-badge:hover {
+  width: 256px !important;
+}
+
+
+
+/* ====================================================================
+                          FOOTER SECTION
+==================================================================== */
+.footer-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #080b12;
+}
+
+.footer-wrap {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #c6cede;
+}
+
+
+/* ====================================================================
+                             RESPONSIVE
+==================================================================== */
+@media (max-width: 1874px) {
+  .hero-content { max-width: 680px; }
+}
+
+@media (max-width: 1700px) {
+  .foreground-img-1 { --offsetX: clamp(-200px, -10vw, -120px); }
+  .foreground-img-2 { --offsetX: clamp(100px, 10vw, 300px); }
+  .foreground-img-3 { --offsetX: clamp(-50px, -10vw, -120px); }
+}
+
+@media (max-width: 1400px) {
+  .hero-content { max-width: 600px; }
+  
+  .social-float { display: none;}
+  .footer-socials-mobile { margin: 0 0 20px 0; display: flex; justify-content: center; gap: 18px; }
+  .footer-wrap { flex-direction: column; justify-content: center; text-align: center; gap: 2px; min-height: auto; padding: 30px 0; }
+  .footer-wrap p { margin: 0; line-height: 1.3; }
+}
+
+@media (max-width: 1100px) {
+  .hero-content { max-width: 800px; }
+  .banner-content { padding: 3rem 0px; }
+
+  .who-we-are-columns { grid-template-columns: repeat(2, 1fr); }
+
+  .hero-inner { display: flex; flex-direction: column; }
+  .hero-text { order: 1; }
+  .hero-media { order: 2; margin: 1.5rem 0; }
+  .hero-actions { order: 3; }
+
+  .news-inner { display: flex; flex-direction: column; }
+  .news-text { order: 1; }
+  .news-media { order: 2; margin: 1.5rem 0; }
+  .hero-actions { order: 3; }
+
+  .mission-inner { display: flex; flex-direction: column; }
+  .mission-text { order: 1; }
+  .mission-media { order: 2; margin: 1.5rem 0; }
+
+  .scroll-foreground { display: none; }
+  .mobile-foreground { display: block; }
+  .donkey-img img { max-width: 300px; }
+  .turtle-img img { max-width: 300px; }
+  .warrior-img img { max-width: 400px; }
+}
+
+@media (max-width: 860px) {
+  .grid.two-col { grid-template-columns: 1fr; }
+
+  .site-nav { position: absolute; top: calc(100% + 0.75rem); right: 1rem; left: 1rem; display: grid; gap: 0.25rem; padding: 0.75rem; background: rgba(8, 11, 18, 0.96); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; transform-origin: top; transform: scaleY(0.96); opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; }
+  .site-nav.open { opacity: 1; pointer-events: auto; transform: scaleY(1); }
+  .site-nav a { padding: 0.85rem 0.9rem; border-radius: 10px; }
+  .site-nav a:hover { background: rgba(255, 255, 255, 0.05); }
+  .menu-toggle { display: block; }
+
+  .content-section { text-align: center; }
+
+  .contact-form-box { text-align: left; }
+}
+
+
+@media (max-width: 768px) {
+  .foreground-img-1 { --offsetX: -25vw; }
+
+  :root { --fan-scale: 0.7; }
+  .boardgames-columns { grid-template-columns: 1fr; }
+  .boardgames-gamecard-container { margin: 30px auto calc(20px * var(--fan-scale)) auto; }
+
+  .social-float { left: 50%; top: auto; bottom: 1rem; transform: translateX(-50%); flex-direction: row; padding: 0.6rem 0.8rem; }
+  .social-link { width: 42px; height: 42px; }
+}
+
+
+@media (max-width: 640px) {
+  .hero-content { padding: 4.5rem 0; }
+
+  .who-we-are-columns { grid-template-columns: 1fr; }
+  
+  .countdown { gap: 10px; }
+  .time-box { width: 80px; padding: 15px; }
+  .time-box span { font-size: 2rem; }
+
+  .btn-primary, .btn-secondary { font-size: 1rem; }
+
+  .content-section { padding: 4.5rem 0; }
+
+  .footer-wrap { flex-direction: column; justify-content: center; text-align: center; padding: 1rem 0; }
+}
+
+
+@media (max-width: 500px) {
+  .boardgames-gamecard-container { margin: 30px auto -40px auto; }
+  .gamecard-overlay { width: 140vw; bottom: -100px; }
+  .gamecard:nth-child(1) { --x: -110px; }
+  .gamecard:nth-child(3) { --x: 110px; }
+}
+
+
+@media (max-width: 375px) {
+  .countdown { gap: 10px; }
+  .time-box { width: 80px; padding: 15px; }
+  .time-box span { font-size: 2rem; }
+  .time-box.seconds { display: none; }
+  
+  .gamecard-overlay { width: 140vw; bottom: -90px; }
+  .gamecard:nth-child(1) { --x: -70px; }
+  .gamecard:nth-child(3) { --x: 70px; }
+}
+
+</style>
+<body>
+
+
+
+<!-- ====================================================================
+                         SOCIAL MEDIA MENU
+===================================================================== -->
+<div class="social-float" aria-label="Social media links">
+  <!--<a href="https://www.facebook.com/clashborngames/" target="_blank" aria-label="Facebook" title="Facebook" class="social-link">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>-->
+
+  <a href="https://www.instagram.com/clashborngames" target="_blank" aria-label="Instagram" title="Instagram Clashborn Games" class="social-link">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@clashborngames" target="_blank" aria-label="TikTok" title="TikTok Clashborn Games" class="social-link">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+</div>
+
+<!-- ====================================================================
+                              HOME SECTION
+===================================================================== -->
+<div id="home" class="section-stage home-stage">
+  <section class="hero parallax" data-speed="0.35" style="--bg-image: url('images/background-img1.webp');">
+    <div class="overlay"></div>
+    <div class="container hero-inner">
+      
+      <!-- Image -->
+      <div class="hero-media reveal-left" data-delay="0.1s">
+        <img src="https://github.com/luckylluuks/ClashbornGames/blob/main/img_Donkey.png?raw=true" alt="Donkey" class="hero-img">
+      </div>
+
+      <!-- Text -->
+      <div class="hero-text reveal-right" data-delay="0.2s">
+        <p class="section-tag">A New Force in board game Publishing</p>
+        <h1>Clashborn Games</h1>
+        <h3>
+          From concept to competitive play, Clashborn Games is an emerging board game studio focused on designing original, high-quality tabletop experiences.
+        </h3>
+        <h3>
+          <span>
+            Founded by a team of passionate and driven creators, we combine strategic design and a deep understanding of player engagement.
+          </span>
+        </h3>
+<div class="hero-actions">
+  <a href="https://www.clashborngames.com/home#boardgames" target="_top" class="btn btn-primary">Explore the Game</a>
+  <a href="https://www.clashborngames.com/home#contact" target="_top" class="btn btn-secondary">Join the Community</a>
+</div>
+        
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+<!-- ====================================================================
+                          WHO WE ARE SECTION
+===================================================================== -->
+<div id="who-we-are" class="content-section dark-section">
+  <div class="container grid two-col">
+    <div>
+      <p class="section-tag">Who We Are</p>
+      <h2>Inspired by Play</h2>
+      <p>
+        Clashborn Games was founded in 2026 for a simple reason: we wanted to play better games. 
+        What started as a personal quest to create the ultimate game night has grown into a 
+        mission to share those experiences with the world.
+      </p>
+      <p>
+        We design the kind of tabletop adventures we want to play—challenging, immersive, and above all, fun. 
+        From our table to yours, we are dedicated to building the most player-focused experiences in the world 
+        and serving the community that loves them.
+      </p>
+      <p>
+        We design with a player-first mindset. 
+        This relentless focus drives us to build the most legendary and enduring gaming experiences.
+        This continuous focus inspires the most meaningful and lasting times together.
+      </p>
+    </div>
+
+    <div class="image-frame">
+      <img src="images/img_Clashborn-Games.webp" alt="Clashborn Games"/>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="who-we-are-columns cards">
+      <article class="info-card">
+        <h3>Focus on the Core</h3>
+        <p>
+          We zero in on the dedicated players who live for the hobby, knowing their passion is what brings others to the table. 
+          As their playstyles evolve, so do we—learning exactly what it takes to meet their needs and surpass their expectations at every game night.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>Obsess Over the Details</h3>
+        <p>
+          For the most passionate players, the small things are the big things. 
+          We put thought into the tactile feel, the subtle mechanics, and the deep lore that others might overlook, ensuring every component earns its place at the table.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>In for the Long term</h3>
+        <p>
+          We don’t chase quick hype or passing trends; we build games that earn a permanent spot on your shelf. 
+          By focusing on quality and deep replayability, we ensure that the worlds we create stay fresh and fun for every game night yet to come.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>Show Gratitude</h3>
+        <p>
+          We know we wouldn’t be here without the community, our playtesters, and everyone who pulls up a chair. 
+          We never take for granted the time people spend with our games, and we make sure to give that same appreciation back to the people who help us build them.
+        </p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================================
+                               BIG NEWS
+===================================================================== -->
+<div id="news" class="section-stage news-stage">
+  <section class="news parallax" data-speed="0.35" style="--bg-image: url('images/background-img2.webp');">
+    <div class="overlay"></div>
+
+    <div class="container news-inner">
+
+      <!-- Text -->
+      <div class="news-text reveal-left" data-delay="0.1s">
+        <p class="section-tag">Latest News</p>
+
+        <h2>
+          Thrilled to announce<br>
+          <span>Rookies Ascended is Coming to Kickstarter!</span>
+        </h2>
+
+        <div class="countdown">
+          <div class="time-box">
+            <span id="days">00</span>
+            <p>Days</p>
+          </div>
+          <div class="time-box">
+            <span id="hours">00</span>
+            <p>Hours</p>
+          </div>
+          <div class="time-box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+          </div>
+          <div class="time-box seconds">
+            <span id="seconds">00</span>
+            <p>Seconds</p>
+          </div>
+        </div>
+
+        <h3>
+          <span>
+            Available on Kickstarter from the 2nd of July 2026!<br>
+            Developing this game has been an epic quest and we can’t wait to bring it to your table.
+            
+          </span>
+        </h3>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Don't miss the launch</a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="news-media reveal-right" data-delay="0.1s">
+        <img src="images/img_Turtle.webp" alt="Turtle" class="news-img">
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+<!-- ====================================================================
+                          BOARD GAMES SECTION
+===================================================================== -->
+<div id="boardgames" class="content-section">
+  <div class="container boardgames-inner">
+    <div class="boardgames-text">
+      <p class="section-tag">Board Games</p>
+      <h2>Rookies Ascended</h2>
+      <h3>
+        A new and exiting board game that includes over 240 playing cards.<br>
+        Get the most legendary and enduring gaming experience with Rookies Ascended!<br>
+        Clashing it out in the Pit with your friends or Foe's.
+      </h3>
+
+      <h3>
+        <span>
+          Rookies Ascended is now listed on <a href="https://boardgamegeek.com/boardgame/469556/rookies-ascended" class="contact-email" target="_blank">BoardGameGeek.com</a>!
+        </span>
+      </h3>
+    
+      <div class="boardgames-gamecard-container">
+        <img src="images/boardgame-card1.webp" class="gamecard" />
+        <img src="images/boardgame-card3.webp" class="gamecard" />
+        <img src="images/boardgame-card2.webp" class="gamecard" />
+
+        <img src="images/logo_Rookies-Ascended-v2.webp" alt="logo Clashborn Games" class="gamecard-overlay"/>
+      </div>
+
+      <div class="boardgames-columns cards">
+        <article class="info-card">
+          <p>
+            Rookies Ascended is the fast-paced strategic board game where "heroism" is highly overrated. 
+            You will start as a Rookie, but you’ll soon Ascend to something more, and leave as a legend! Not one game is the same!
+          </p>
+        </article>
+        <article class="info-card">
+          <p>
+            This boardgame is going big! 
+            With Rookies that are ascending into classes! 
+            Ascend to a Warrior, Hunter, or one of 3 other classes, each class has its own ascended Effect that will affect your Clashes.
+          </p>
+        </article>
+        <article class="info-card">
+          <p>
+            There are more than 90 Gear cards and 150 Function cards that you can play at all times during the game! 
+            Take on your Friends or the Boss in the Pit!
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================================
+                              MISSION SECTION
+===================================================================== -->
+<div id="mission" class="section-stage mission-stage">
+  <section class="mission parallax" data-speed="0.35" style="--bg-image: url('images/background-img3.webp');">
+    <div class="overlay"></div>
+    <div class="container mission-inner">
+
+      <!-- Image -->
+      <div class="mission-media reveal-left" data-delay="0.1s">
+        <img src="images/img_Warrior.webp" alt="Warrior" class="mission-img">
+      </div>
+
+      <!-- Text -->
+      <div class="mission-text reveal-right" data-delay="0.2s">
+        <p class="section-tag">The Clashborn Mission</p>
+        <h2>Develop innovative board&nbsp;games!</h2>
+        <h3>With a clear creative vision and a commitment to excellence!</h3>
+        <h3>
+          <span>Stand out in a crowded market games that are accessible, replayable, and built for long-term growth. Clashborn Games is positioned to become a recognizable name in the next generation of board game publishers.</span>
+        </h3>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+
+<!-- ====================================================================
+                          CONTACT SECTION
+===================================================================== -->
+
+<div id="contact" class="content-section">
+  <div class="container grid two-col contact-grid">
+    <div>
+      <p class="section-tag">Contact</p>
+      <h2>Stay in the Loop. Don't miss the launch!</h2>
+      <p>
+        If you want to be the first to know when we go live and gain access to early-bird specials sign up for our newsletter. 
+        We promise to only send the most important updates.
+      </p>
+      <p>
+        Have a question about our services or want to learn more about what we do? 
+        We’d love to hear from you.
+      </p>
+      <p>
+        You can reach us at <a href="mailto:info@clashborngames.com" class="contact-email">info@clashborngames.com</a> or subscribe to our newsletter. We’ll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <div class="contact-form-box">
+      <!-- Brevo-compatible form structure, styled by your CSS -->
+      <div class="sib-form contact-form-brevo">
+        <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="form-status error" style="display:none;">
+            Your subscription could not be saved. Please try again.
+          </div>
+
+          <div id="success-message" class="form-status success" style="display:none;">
+            Your subscription has been successful.
+          </div>
+
+          <div id="sib-container" class="sib-container--medium sib-container--horizontal contact-form">
+            <form id="sib-form" method="POST" action="https://3a6b21d8.sibforms.com/serve/MUIFANnkJw-nsPwYU6K9ovfXtgwZNnmj4lvjyBZ1NPNcTyFlJPTBy7kJzevqH3ZMqkzPd1tkFkbBwVVPR2P8JyU7BgC6mtEMIIhP_1ghPHhi-pVQqCiGYn9P3GvYdK63tgKf1MOOSHs2Hxi9eB-9akRKcYPUcVARKYqAbCgfS7_V4cVNVdHpOcQaezcUJWQfa0lJK9CUuDv1QcAhvg==" data-type="subscription">
+
+              <h3>Subscribe to our&nbsp;Newsletter</h3>
+
+              <!-- First Name -->
+              <div class="sib-input sib-form-block form-row">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row form__label-row--horizontal field-required form-label-field">
+                    <label class="entry__label" for="FIRSTNAME" data-required="*">First Name*</label>
+                    <div class="entry__field">
+                      <input class="input " maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="First Name" data-required="true" required />
+                    </div>
+                  </div>
+                  <label class="entry__error entry__error--primary field-error" style="margin-top: 10px;"></label>
+                </div>
+              </div>
+
+              <!-- Last Name -->
+              <div class="sib-input sib-form-block form-row">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row form__label-row--horizontal field-required form-label-field">
+                    <label class="entry__label" for="LASTNAME" data-required="*">Last Name*</label>
+                    <div class="entry__field">
+                      <input class="input " maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="off" placeholder="Last Name" data-required="true" required />
+                    </div>
+                  </div>
+                  <label class="entry__error entry__error--primary field-error" style="margin-top: 10px;"></label>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="sib-input sib-form-block form-row">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row form__label-row--horizontal field-required form-label-field">
+                    <label class="entry__label" for="EMAIL" data-required="*">Email*</label>
+                    <div class="entry__field">
+                      <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="You@email.com" data-required="true" required />
+                    </div>
+                  </div>
+                  <label class="entry__error entry__error--primary field-error" style="margin-top: 10px;"></label>
+                </div>
+              </div>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden">
+              <input type="hidden" name="locale" value="en">
+
+              <button form="sib-form" type="submit" class="btn btn-primary contact-btn sib-form-block__button sib-form-block__button-with-loader">
+                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                  <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                </svg>
+                Subscribe
+              </button>
+
+              <div style="padding: 8px 0;">
+                <div class="g-recaptcha-v3" data-sitekey="6LcjN0ksAAAAAJbb1uLUSLNO8AYNCb5SmOVJnl96"></div>
+              </div>
+
+              <p class="form-description">
+                Fields marked with an * are required.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================================
+                               FOOTER
+===================================================================== -->
+<footer class="footer-section">
+  <div class="container footer-wrap">
+    
+    <!-- ================= SOCIAL ICONS ================= -->
+    <div class="footer-socials-mobile">
+        <!--<a href="https://www.facebook.com/xxx/" target="_blank" aria-label="Facebook" title="Facebook" class="social-link">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>-->
+        <a href="https://www.instagram.com/clashborngames" target="_blank" aria-label="Instagram" title="Instagram" class="social-link">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@clashborngames" target="_blank" aria-label="TikTok" title="TikTok" class="social-link">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
+
+    <!-- ================= COPYRIGHT ================= -->
+    <p>© <script>document.write(new Date().getFullYear());</script> Clashborn Games<sup>&reg;</sup>. All Rights Reserved.</p>
+    <p>KVK-Nummer : 42036807</p>
+
+  </div>
+</footer>
+
+/* <script src="script.js"></script> */
+
+
+<script>
+  
+  /* ====================================================================
+                          DOM REFERENCES
+==================================================================== */
+const parallaxSections = document.querySelectorAll(".parallax");
+const navLinks = document.querySelectorAll(".site-nav a");
+const sections = document.querySelectorAll("#home, #who-we-are, #news, #boardgames, #mission, #contact");
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.querySelector(".site-nav");
+const foregroundLayers = document.querySelectorAll(".scroll-foreground");
+
+/* ====================================================================
+                      PARALLAX BACKGROUND IMAGES
+==================================================================== */
+function updateParallax() {
+  const scrollY = window.pageYOffset;
+
+  parallaxSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+    const speed = parseFloat(section.dataset.speed || "0.2");
+    const offsetTop = window.scrollY + rect.top;
+    const yPos = (scrollY - offsetTop) * speed;
+
+    section.style.backgroundPosition = `center calc(40% + ${yPos}px)`;
+  });
+}
+
+/* ====================================================================
+                     PARALLAX FOREGROUND IMAGES
+==================================================================== */
+function updateForegroundDepth() {
+  if (window.innerWidth <= 860) return;
+
+  const scrollY = window.scrollY;
+
+  foregroundLayers.forEach((layer) => {
+    const depth = parseFloat(layer.dataset.depth || "0.1");
+    const movement = scrollY * depth;
+    const clamped = Math.max(-120, Math.min(120, movement));
+    layer.style.setProperty("--scrollY", clamped + "px");
+  });
+}
+
+/* ====================================================================
+                      SECTION REVEAL ANIMATIONS
+==================================================================== */
+function initRevealAnimations() {
+  document.querySelectorAll(".hero-media, .hero-text").forEach((el) => {
+    el.classList.add("show");
+  });
+
+  const animatedSections = document.querySelectorAll(".news-stage, .mission-stage");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const revealItems = entry.target.querySelectorAll(".reveal-left, .reveal-right");
+
+        revealItems.forEach((item) => {
+          if (entry.isIntersecting) {
+            item.classList.add("show");
+          } else {
+            item.classList.remove("show");
+          }
+        });
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  animatedSections.forEach((section) => observer.observe(section));
+}
+
+/* ====================================================================
+                      BOARDGAME CARDS ANIMATION
+==================================================================== */
+function initCardFanAnimation() {
+  const container = document.querySelector(".boardgames-gamecard-container");
+  const cards = document.querySelectorAll(".gamecard");
+
+  if (!container || !cards.length) return;
+
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        cards.forEach((card) => card.classList.add("animate"));
+        cardObserver.unobserve(container);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  cardObserver.observe(container);
+}
+
+
+/* ====================================================================
+                          COUNTDOWN TIMER
+==================================================================== */
+const targetDate = new Date("2026-07-02T23:59:59").getTime(); 
+
+const elements = {
+  days: document.getElementById("days"),
+  hours: document.getElementById("hours"),
+  minutes: document.getElementById("minutes"),
+  seconds: document.getElementById("seconds"),
+};
+
+function animateFlip(element, value) {
+  if (!element) return;
+
+  const newValue = String(value).padStart(2, "0");
+
+  if (element.textContent !== newValue) {
+    element.classList.add("flip");
+
+    setTimeout(() => {
+      element.textContent = newValue;
+      element.classList.remove("flip");
+    }, 200);
+  }
+}
+
+function updateCountdown() {
+  const countdown = document.querySelector(".countdown");
+  if (!countdown || !elements.days || !elements.hours || !elements.minutes || !elements.seconds) {
+    return;
+  }
+
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+    countdown.innerHTML = "<h2>Rookies Ascended<br>now on Kickstarter</h2>";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  animateFlip(elements.days, days);
+  animateFlip(elements.hours, hours);
+  animateFlip(elements.minutes, minutes);
+  animateFlip(elements.seconds, seconds);
+}
+
+/* ====================================================================
+                          NAVIGATION STATE
+==================================================================== */
+function updateActiveNav() {
+  let currentId = "";
+
+  sections.forEach((section) => {
+    const top = section.offsetTop - 120;
+    const height = section.offsetHeight;
+
+    if (window.scrollY >= top && window.scrollY < top + height) {
+      currentId = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href")?.replace("#", "");
+    link.classList.toggle("active", href === currentId);
+  });
+}
+
+/* ====================================================================
+                         MOBILE NAVIGATION
+==================================================================== */
+function closeMenu() {
+  if (!siteNav || !menuToggle) return;
+
+  siteNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = siteNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 860) {
+      closeMenu();
+    }
+  });
+}
+
+/* ====================================================================
+                              STARTUP
+==================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-delay]").forEach((el) => {
+    el.style.setProperty("--delay", el.dataset.delay);
+  });
+
+  initRevealAnimations();
+  initCardFanAnimation();
+
+  updateParallax();
+  updateForegroundDepth();
+  updateActiveNav();
+  updateCountdown();
+
+  setInterval(updateCountdown, 1000);
+});
+
+/* ====================================================================
+                        GLOBAL EVENT LISTENERS
+==================================================================== */
+window.addEventListener("scroll", () => {
+  updateParallax();
+  updateForegroundDepth();
+  updateActiveNav();
+});
+
+window.addEventListener("load", () => {
+  updateParallax();
+  updateForegroundDepth();
+  updateActiveNav();
+});
+
+</script>
+
+<!-- ================= BREVO ================= -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+ 
+  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+ 
+  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+ 
+  window.translation = {
+    common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected',
+      selectedOption: '{quantity} selected',
+      selectedOptions: '{quantity} selected',
+    }
+  };
+ 
+  var AUTOHIDE = Boolean(1);
+</script>
+ 
+<script src="https://sibforms.com/forms/end-form/build/main.js"></script>
+ 
+<script src="https://www.google.com/recaptcha/api.js?render=6LcjN0ksAAAAAJbb1uLUSLNO8AYNCb5SmOVJnl96&hl=en" async defer></script>
+
+<script>
+window.addEventListener("load", () => {
+  const badge = document.querySelector('.grecaptcha-badge');
+  const formBox = document.querySelector('.contact-form-box');
+
+  if (badge && formBox) {
+    formBox.appendChild(badge);
+  }
+});
+</script>
+
+</body>
+</html>
